@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const, unnecessary_new
+
 import 'dart:html';
 
 import 'package:flutter/material.dart';
@@ -56,7 +58,7 @@ class AuthHomePage extends StatelessWidget {
                       child: const Text('Sign Up'),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
-                        onPrimary: Color(0xFF3A66BD),
+                        onPrimary: const Color(0xFF3A66BD),
                       ),
                       onPressed: () {},
                     ),
@@ -73,7 +75,7 @@ class AuthHomePage extends StatelessWidget {
                     child: ElevatedButton(
                       child: const Text('Login'),
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF3A66BD),
+                        primary: const Color(0xFF3A66BD),
                         onPrimary: Colors.white,
                       ),
                       onPressed: () {},
@@ -81,30 +83,83 @@ class AuthHomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                child: Divider(
-                  height: 2,
-                  color: Color(0xFFB7BAC0),
-                  indent: 300,
-                  endIndent: 500,
-                ),
+              const SizedBox(
+                height: 50,
               ),
-              SizedBox(
-                child: Tex,
-              )
-
-              Container(
-                child: Divider(
-                  height: 2,
-                  color: Color(0xFFB7BAC0),
-                  indent: 500,
-                  endIndent: 300,
-                ),
+              const _OrComponent(),
+              const SizedBox(
+                height: 50,
               ),
-
-              Container(),
+              _createLoginButtonGoogle()
             ],
           ),
         ));
   }
+}
+
+class _OrComponent extends StatelessWidget {
+  const _OrComponent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        const Expanded(
+            flex: 1,
+            child: Divider(
+              color: Color(0xFFB7BAC0),
+              height: 2,
+              indent: 300,
+            )),
+        Expanded(
+            flex: 0,
+            child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: const Text(
+                  "OR",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Color(0xFFB7BAC0),
+                  ),
+                ))),
+        const Expanded(
+            flex: 1,
+            child: Divider(
+              color: Color(0xFFB7BAC0),
+              height: 2,
+              endIndent: 300,
+            ))
+      ],
+    );
+  }
+}
+
+Widget _createLoginButtonGoogle() {
+  return Container(
+    margin: const EdgeInsets.symmetric(horizontal: 300, vertical: 20),
+    child: ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.white,
+        onPrimary: const Color(0xFF3A66BD),
+      ),
+      onPressed: () {},
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Image.asset(
+            'images/google_icon.png',
+            height: 48.0,
+          ),
+          new Container(
+              padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+              child: const Text(
+                "Continue with Google",
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+              )),
+        ],
+      ),
+    ),
+  );
 }
