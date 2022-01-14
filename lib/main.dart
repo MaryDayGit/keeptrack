@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:keeptrack/page/authpage.dart';
+import 'package:keeptrack/page/register.dart';
+import 'package:keeptrack/page/signpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +13,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const AuthHomePage(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/second': (context) => const SignUp(),
+        '/register': (context) => RegisterPage(),
+      },
+
       //theme: ThemeData(backgroundColor: const Color(0xFF3A66BD)),
-      home: AuthHomePage(),
+      //home: AuthHomePage(),
     );
   }
 }

@@ -1,6 +1,6 @@
 // ignore_for_file: unnecessary_const, unnecessary_new
 
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -33,23 +33,24 @@ class AuthHomePage extends StatelessWidget {
               ),
               // ignore: avoid_unnecessary_containers
               Container(
+                padding: const EdgeInsets.all(50),
                 child: const Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'We help you to monitor your money on Ecommerce App',
-                    textScaleFactor: 1.0,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'We help you to monitor your money on Ecommerce App',
+                      textScaleFactor: 1.0,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    )),
               ),
+
               const SizedBox(
-                height: 15,
+                height: 10,
               ),
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 300),
+                margin: const EdgeInsets.symmetric(horizontal: 50),
                 child: Align(
                   alignment: Alignment.center,
                   child: SizedBox(
@@ -60,14 +61,16 @@ class AuthHomePage extends StatelessWidget {
                         primary: Colors.white,
                         onPrimary: const Color(0xFF3A66BD),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/second');
+                      },
                     ),
                   ),
                 ),
               ),
               Container(
                 margin:
-                    const EdgeInsets.symmetric(horizontal: 300, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                 child: Align(
                   alignment: Alignment.center,
                   child: SizedBox(
@@ -84,11 +87,11 @@ class AuthHomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 10,
               ),
               const _OrComponent(),
               const SizedBox(
-                height: 50,
+                height: 10,
               ),
               _createLoginButtonGoogle()
             ],
@@ -109,7 +112,7 @@ class _OrComponent extends StatelessWidget {
             child: Divider(
               color: Color(0xFFB7BAC0),
               height: 2,
-              indent: 300,
+              indent: 50,
             )),
         Expanded(
             flex: 0,
@@ -127,7 +130,7 @@ class _OrComponent extends StatelessWidget {
             child: Divider(
               color: Color(0xFFB7BAC0),
               height: 2,
-              endIndent: 300,
+              endIndent: 50,
             ))
       ],
     );
@@ -136,7 +139,7 @@ class _OrComponent extends StatelessWidget {
 
 Widget _createLoginButtonGoogle() {
   return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 300, vertical: 20),
+    margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: Colors.white,
