@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => const AuthHomePage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => const SignUp(),
-        '/register': (context) => RegisterPage(),
+        '/signup': (context) => const SignUp(),
+        "/register": (context) => const RegisterPage(),
       },
 
       //theme: ThemeData(backgroundColor: const Color(0xFF3A66BD)),

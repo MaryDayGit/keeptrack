@@ -62,7 +62,7 @@ class AuthHomePage extends StatelessWidget {
                         onPrimary: const Color(0xFF3A66BD),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/second');
+                        Navigator.pushNamed(context, '/register');
                       },
                     ),
                   ),
@@ -81,7 +81,9 @@ class AuthHomePage extends StatelessWidget {
                         primary: const Color(0xFF3A66BD),
                         onPrimary: Colors.white,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/signup');
+                      },
                     ),
                   ),
                 ),

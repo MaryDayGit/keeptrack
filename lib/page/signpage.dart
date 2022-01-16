@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -100,6 +100,29 @@ class _SignUpState extends State<SignUp> {
               height: 20,
             ),
             const _TextWidgt(),
+            Expanded(
+              flex: 1,
+              child: Divider(
+                color: Color(0xFFB7BAC0),
+                height: 1,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/register');
+              },
+              child: const Text(
+                'Forgot Password?',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Color(0xFF3A66BD),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ],
         ),
       ),
