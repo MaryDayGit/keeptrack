@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:keeptrack/page/authpage.dart';
+import 'package:keeptrack/page/menupage.dart';
 import 'package:keeptrack/page/register.dart';
 import 'package:keeptrack/page/signpage.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/signup': (context) => const SignUp(),
         "/register": (context) => const RegisterPage(),
+        "/menupage": (context) => const MenuWidgetPage(),
       },
 
       //theme: ThemeData(backgroundColor: const Color(0xFF3A66BD)),

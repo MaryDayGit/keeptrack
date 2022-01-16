@@ -91,7 +91,9 @@ class _SignUpState extends State<SignUp> {
                       primary: const Color(0xFF3A66BD),
                       onPrimary: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/menupage');
+                    },
                   ),
                 ),
               ),

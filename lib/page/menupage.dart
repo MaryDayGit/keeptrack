@@ -33,7 +33,7 @@ class MenuWidgetPage extends StatelessWidget {
               child: const Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  'CashUp',
+                  'Track your shopping activities',
                   textScaleFactor: 1.0,
                   style: TextStyle(
                     fontSize: 16,
