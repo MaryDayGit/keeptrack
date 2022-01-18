@@ -12,8 +12,11 @@ class MenuWidgetPage extends StatelessWidget {
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 50,
+            ),
             Container(
               child: const Align(
                 alignment: Alignment.center,
@@ -43,21 +46,77 @@ class MenuWidgetPage extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Divider(
-                color: Color(0xFFB7BAC0),
-                height: 1,
-              ),
+            Divider(
+              color: Color(0xFFB7BAC0),
+              height: 1,
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 50),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Align(
-                alignment: Alignment.center,
+                alignment: Alignment.topLeft,
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    child: const Text('Home'),
+                    child: const Text(
+                      'Home',
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF3A66BD),
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Home',
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF3A66BD),
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Home',
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF3A66BD),
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Home',
+                    ),
                     style: ElevatedButton.styleFrom(
                       primary: const Color(0xFF3A66BD),
                       onPrimary: Colors.white,
