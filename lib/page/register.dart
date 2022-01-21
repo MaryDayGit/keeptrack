@@ -147,7 +147,7 @@ class _TextWidgt extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, '/register');
+            Navigator.pushNamed(context, '/signup');
           },
           child: const Text(
             'Login',
