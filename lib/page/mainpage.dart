@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class MainHomePage extends StatefulWidget {
   const MainHomePage({Key? key}) : super(key: key);
@@ -8,6 +9,27 @@ class MainHomePage extends StatefulWidget {
 }
 
 class _MainHomePageState extends State<MainHomePage> {
+  late List<GDPData> _chartData;
+  late TooltipBehavior _tooltipBehavior;
+  @override
+  void initState() {
+    _chartData = getChartData();
+    _tooltipBehavior = TooltipBehavior(enable: true);
+    super.initState();
+  }
+
+  List<GDPData> getChartData() {
+    final List<GDPData> chartData = [
+      GDPData('test1', 1000),
+      GDPData('test2', 1500),
+      GDPData('test3', 11100),
+      GDPData('test4', 1050),
+      GDPData('test5', 1580),
+      GDPData('test6', 1180),
+    ];
+    return chartData;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,9 +158,27 @@ class _MainHomePageState extends State<MainHomePage> {
                 ],
               ),
             ),
+            SfCircularChart(
+              tooltipBehavior: _tooltipBehavior,
+              series: <CircularSeries>[
+                DoughnutSeries<GDPData, String>(
+                  dataSource: _chartData,
+                  xValueMapper: (GDPData data, _) => data.continent,
+                  yValueMapper: (GDPData data, _) => data.gdp,
+                  enableTooltip: true,
+                  //dataLabelSettings: DataLabelSettings(isVisible: true),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+class GDPData {
+  GDPData(this.continent, this.gdp);
+  final String continent;
+  final int gdp;
 }
