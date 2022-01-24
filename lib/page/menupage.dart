@@ -53,10 +53,10 @@ class MenuWidgetPage extends StatelessWidget {
               color: Color(0xFFB7BAC0),
               height: 1,
             ),
-            _menubutton('Home', 'images/homeimg.png'),
-            _menubutton('Balance', 'images/balanceimg.png'),
-            _menubutton('Cash Flow', 'images/cashflowimg.png'),
-            _menubutton('Profile', 'images/profileimg.png'),
+            _menubutton(context, 'Home', 'images/homeimg.png'),
+            _menubutton(context, 'Balance', 'images/balanceimg.png'),
+            _menubutton(context, 'Cash Flow', 'images/cashflowimg.png'),
+            _menubutton(context, 'Profile', 'images/profileimg.png'),
             SizedBox(
               height: 200,
             ),
@@ -85,7 +85,7 @@ class MenuWidgetPage extends StatelessWidget {
   }
 }
 
-Widget _menubutton(String butttext, String pathImg) {
+Widget _menubutton(BuildContext context, String butttext, String pathImg) {
   return Container(
     margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
     child: ElevatedButton(
@@ -93,7 +93,9 @@ Widget _menubutton(String butttext, String pathImg) {
         primary: const Color(0xFF3A66BD),
         onPrimary: Colors.white,
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(context, '/mainpage');
+      },
       child: Row(
         children: <Widget>[
           Image.asset(

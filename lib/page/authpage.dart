@@ -3,6 +3,7 @@
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
+//TODO доделать валидацию авторизации
 
 class AuthHomePage extends StatelessWidget {
   const AuthHomePage({Key? key}) : super(key: key);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:keeptrack/page/authpage.dart';
+import 'package:keeptrack/page/mainpage.dart';
 import 'package:keeptrack/page/menupage.dart';
 import 'package:keeptrack/page/register.dart';
 import 'package:keeptrack/page/signpage.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => const SignUp(),
         "/register": (context) => const RegisterPage(),
         "/menupage": (context) => const MenuWidgetPage(),
+        "/mainpage": (context) => const MainHomePage(),
       },
 
       //theme: ThemeData(backgroundColor: const Color(0xFF3A66BD)),
