@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:keeptrack/page/addtranz.dart';
 import 'package:keeptrack/page/authpage.dart';
 import 'package:keeptrack/page/mainpage.dart';
 import 'package:keeptrack/page/menupage.dart';
@@ -19,12 +20,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => const AuthHomePage(),
+        '/': (context) => const AddTranz(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/signup': (context) => const SignUp(),
         "/register": (context) => const RegisterPage(),
         "/menupage": (context) => const MenuWidgetPage(),
-        "/mainpage": (context) => MainHomePage(),
+        "/mainpage": (context) => const MainHomePage(),
       },
 
       //theme: ThemeData(backgroundColor: const Color(0xFF3A66BD)),

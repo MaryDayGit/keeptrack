@@ -1,8 +1,27 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: non_constant_identifier_names, avoid_unnecessary_containers
 
-class AddTranz extends StatelessWidget {
-  AddTranz({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:keeptrack/model/modeltranz.dart';
+
+class AddTranz extends StatefulWidget {
+  const AddTranz({Key? key}) : super(key: key);
+
+  @override
+  State<AddTranz> createState() => _AddTranzState();
+}
+
+class _AddTranzState extends State<AddTranz> {
   final _sumatranz = TextEditingController();
+
+  ModelTranz tanz1 = ModelTranz(comment: '', title: '', suma: 0);
+
+  SaveInfo() {
+    tanz1.title = 'test1';
+    tanz1.comment = 'test2';
+    tanz1.suma = int.parse(_sumatranz.text);
+    print(tanz1.title);
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +44,42 @@ class AddTranz extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.text,
                 style: const TextStyle(fontSize: 16, color: Colors.black),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Align(
+                alignment: Alignment.center,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    child: const Text('push'),
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF3A66BD),
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: () {
+                      SaveInfo();
+                    },
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Text(tanz1.title),
+                  Text(tanz1.comment),
+                  Text(
+                    tanz1.suma.toString(),
+                  )
+                ],
               ),
             ),
           ],
