@@ -12,6 +12,9 @@ class AddTranz extends StatefulWidget {
 
 class _AddTranzState extends State<AddTranz> {
   final _sumatranz = TextEditingController();
+  List<String> titleTranz = [];
+  List<String> commentTranz = [];
+  List<String> sumaTranz = [];
 
   ModelTranz tanz1 = ModelTranz(comment: '', title: '', suma: 0);
 
@@ -19,8 +22,9 @@ class _AddTranzState extends State<AddTranz> {
     tanz1.title = 'test1';
     tanz1.comment = 'test2';
     tanz1.suma = int.parse(_sumatranz.text);
-    print(tanz1.title);
-    setState(() {});
+    titleTranz.add(tanz1.title);
+    commentTranz.add(tanz1.comment);
+    sumaTranz.add(tanz1.toString());
   }
 
   @override
@@ -70,17 +74,6 @@ class _AddTranzState extends State<AddTranz> {
             ),
             const SizedBox(
               height: 20,
-            ),
-            Container(
-              child: Column(
-                children: [
-                  Text(tanz1.title),
-                  Text(tanz1.comment),
-                  Text(
-                    tanz1.suma.toString(),
-                  )
-                ],
-              ),
             ),
           ],
         ),

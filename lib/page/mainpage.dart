@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:keeptrack/model/modeltranz.dart';
 
 class MainHomePage extends StatefulWidget {
   const MainHomePage({Key? key}) : super(key: key);
@@ -11,6 +12,8 @@ class MainHomePage extends StatefulWidget {
 class _MainHomePageState extends State<MainHomePage> {
   late List<GDPData> _chartData;
   late TooltipBehavior _tooltipBehavior;
+  late List<ModelTranz> _modelTranz;
+
   @override
   void initState() {
     _chartData = getChartData();
