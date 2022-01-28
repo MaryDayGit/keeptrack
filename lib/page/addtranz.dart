@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:keeptrack/model/modeltranz.dart';
+import 'package:keeptrack/page/mainpage.dart';
 
 class AddTranz extends StatefulWidget {
   const AddTranz({Key? key}) : super(key: key);
@@ -25,6 +26,14 @@ class _AddTranzState extends State<AddTranz> {
     titleTranz.add(tanz1.title);
     commentTranz.add(tanz1.comment);
     sumaTranz.add(tanz1.toString());
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => MainHomePage(
+            titleTranz: titleTranz,
+            commentTranz: commentTranz,
+            sumaTranz: sumaTranz),
+      ),
+    );
   }
 
   @override

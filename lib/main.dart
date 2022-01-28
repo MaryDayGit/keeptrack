@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => const SignUp(),
         "/register": (context) => const RegisterPage(),
         "/menupage": (context) => const MenuWidgetPage(),
-        "/mainpage": (context) => const MainHomePage(),
+        //"/mainpage": (context) => MainHomePage(),
       },
 
       //theme: ThemeData(backgroundColor: const Color(0xFF3A66BD)),

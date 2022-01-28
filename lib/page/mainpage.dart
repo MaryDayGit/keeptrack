@@ -1,9 +1,18 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:keeptrack/model/modeltranz.dart';
 
 class MainHomePage extends StatefulWidget {
-  const MainHomePage({Key? key}) : super(key: key);
+  List<String> titleTranz = [];
+  List<String> commentTranz = [];
+  List<String> sumaTranz = [];
+  MainHomePage({
+    Key? key,
+    required this.titleTranz,
+    required this.commentTranz,
+    required this.sumaTranz,
+  }) : super(key: key);
 
   @override
   State<MainHomePage> createState() => _MainHomePageState();
@@ -11,14 +20,11 @@ class MainHomePage extends StatefulWidget {
 
 class _MainHomePageState extends State<MainHomePage> {
   late List<GDPData> _chartData;
-  late TooltipBehavior _tooltipBehavior;
-  late List<ModelTranz> _modelTranz;
 
-  @override
+  late TooltipBehavior _tooltipBehavior;
   void initState() {
     _chartData = getChartData();
     _tooltipBehavior = TooltipBehavior(enable: true);
-    super.initState();
   }
 
   List<GDPData> getChartData() {
@@ -172,6 +178,20 @@ class _MainHomePageState extends State<MainHomePage> {
                   //dataLabelSettings: DataLabelSettings(isVisible: true),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ListView.builder(
+              padding: EdgeInsets.all(5),
+              shrinkWrap: true,
+              itemCount: widget.titleTranz.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Text(
+                  widget.titleTranz[index],
+                  style: TextStyle(fontSize: 22, color: Colors.black),
+                );
+              },
             ),
           ],
         ),
