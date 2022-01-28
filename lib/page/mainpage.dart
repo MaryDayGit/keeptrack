@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+// ignore: must_be_immutable
 class MainHomePage extends StatefulWidget {
   List<String> titleTranz = [];
   List<String> commentTranz = [];
@@ -22,6 +23,8 @@ class _MainHomePageState extends State<MainHomePage> {
   late List<GDPData> _chartData;
 
   late TooltipBehavior _tooltipBehavior;
+  @override
+  // ignore: must_call_super
   void initState() {
     _chartData = getChartData();
     _tooltipBehavior = TooltipBehavior(enable: true);
@@ -179,17 +182,54 @@ class _MainHomePageState extends State<MainHomePage> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ListView.builder(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               shrinkWrap: true,
               itemCount: widget.titleTranz.length,
               itemBuilder: (BuildContext context, int index) {
-                return Text(
-                  widget.titleTranz[index],
-                  style: TextStyle(fontSize: 22, color: Colors.black),
+                return Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(20, 10, 20, 5),
+                          child: Text(
+                            widget.titleTranz[index],
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(20, 10, 20, 5),
+                          child: Text(
+                            widget.commentTranz[index],
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(50, 10, 20, 5),
+                      child: Text(
+                        widget.sumaTranz[index],
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
                 );
               },
             ),
